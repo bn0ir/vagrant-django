@@ -1,0 +1,25 @@
+server {
+        listen 80 default_server;
+
+        location / {
+                index index.html;
+                alias /vagrant/app/media/;
+                try_files $uri $uri/ @django;
+        }
+
+        location @django {
+                add_header Access-Control-Allow-Origin *;
+                proxy_pass http://127.0.0.1:8000;
+                proxy_set_header Host $http_host;
+        }
+
+	location /media/ {
+                add_header Access-Control-Allow-Origin *;
+                alias /vagrant/app/media/;
+        }
+
+        location /media/static/admin/ {
+                add_header Access-Control-Allow-Origin *;
+                alias /usr/local/lib/python2.7/dist-packages/django/contrib/admin/static/admin/;
+        }
+}
