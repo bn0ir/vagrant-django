@@ -1,6 +1,6 @@
 add-apt-repository -y ppa:chris-lea/node.js
 apt-get update && apt-get upgrade -y
-apt-get install -y nginx libgdbm-dev libncurses5-dev automake libtool bison libffi-dev nginx-extras git libpq-dev nodejs g++ postgresql python-pip python-dev python-imaging libpng-dev libjpeg-dev
+apt-get install -y nginx libgdbm-dev libncurses5-dev automake libtool bison libffi-dev nginx-extras git libpq-dev nodejs g++ postgresql python-pip python3-pip python-dev python-imaging libpng-dev libjpeg-dev 
 
 #install tty.js
 npm install -g tty.js
